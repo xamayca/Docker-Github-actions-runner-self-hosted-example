@@ -1,0 +1,17 @@
+services:
+
+  github-actions-runner:
+    container_name: Github-actions-runner
+    restart: no
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - local-network
+
+networks:
+  local-network:
+    name: local
+    driver: bridge
