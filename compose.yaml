@@ -1,0 +1,34 @@
+services:
+
+  github-actions-runner:
+    # Nom du conteneur Docker
+    container_name: Github-actions-runner
+
+    # Redémarre automatiquement le conteneur en cas d’arrêt ?
+    restart: "no"
+
+    # Chemin du fichier .env contenant les variables d’environnement pour le conteneur
+    env_file:
+      - .env
+
+    # Instructions pour construire l’image Docker personnalisée
+    build:
+      # Chemin où se trouve le Dockerfile
+      context: .
+
+      # Nom du fichier Dockerfile à utiliser
+      dockerfile: Dockerfile
+
+    # Connexion du conteneur à un réseau Docker nommé
+    networks:
+      - local-network
+
+# Définition des réseaux Docker utilisés dans ce compose
+networks:
+  # Nom interne du réseau utilisé dans le fichier
+  local-network:
+    # Nom réel du réseau visible dans Docker
+    name: local
+
+    # Type de driver réseau, ici 'bridge' (réseau privé local par défaut)
+    driver: bridge
