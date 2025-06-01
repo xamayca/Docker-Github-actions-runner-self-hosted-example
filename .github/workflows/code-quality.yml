@@ -4,10 +4,10 @@ run-name: ${{ github.actor }} initiated ${{ github.event_name }} starting ${{ gi
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
 
 permissions:
   contents: read
