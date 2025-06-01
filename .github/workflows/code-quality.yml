@@ -19,9 +19,6 @@ jobs:
       - name: Récupération du code source
         uses: actions/checkout@v4
 
-      - name: Installation des dépendances avec Composer
-        run: composer install --prefer-dist --no-progress --no-interaction
-
       - name: Analyse statique du code avec PHPStan
         run: ./vendor/bin/phpstan analyse
 
