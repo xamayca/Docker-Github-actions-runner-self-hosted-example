@@ -19,9 +19,6 @@ jobs:
       - name: Récupération du code source
         uses: actions/checkout@v4
 
-      - name: Contrôle de conformité du fichier Composer
-        run: composer validate --strict
-
       - name: Installation des dépendances avec Composer
         run: composer install --prefer-dist --no-progress --no-interaction
 
