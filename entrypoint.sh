@@ -2,6 +2,8 @@
 
 # Définit les labels du runner GitHub Actions auto-hébergé
 export GITHUB_RUNNER_LABELS="x64,linux,ephemeral"
+export GITHUB_REPOSITORY_OWNER="xamayca"
+export GITHUB_REPOSITORY_NAME="Docker-Github-actions-runner-self-hosted-example"
 
 # Définit le répertoire de travail du runner GitHub Actions auto-hébergé
 export GITHUB_RUNNER_WORKDIR="workdir-runner"
