@@ -42,43 +42,43 @@ class PostTest extends TestCase
                 'id' => 1,
                 'title' => "",
                 'content' => "Contenu de l'article valide avec au moins dix caractères",
-                'exception' => "Le titre ne peut pas être vide"
+                'exception' => "Le titre ne peut pas être vide."
             ],
             'title_null' => [
                 'id' => 1,
                 'title' => "",
                 'content' => "Contenu de l'article valide avec au moins dix caractères",
-                'exception' => "Le titre ne peut pas être vide"
+                'exception' => "Le titre ne peut pas être vide."
             ],
             'title_too_short' => [
                 'id' => 1,
                 'title' => "Titre",
                 'content' => "Contenu de l'article valide avec au moins dix caractères",
-                'exception' => "Le titre doit être compris entre 10 et 150 caractères"
+                'exception' => "Le titre doit être compris entre 10 et 150 caractères."
             ],
             'title_too_long' => [
                 'id' => 1,
                 'title' => str_repeat("Titre d'article invalide supérieur a 150 caractères", 10),
                 'content' => "Contenu de l'article valide avec au moins dix caractères",
-                'exception' => "Le titre doit être compris entre 10 et 150 caractères"
+                'exception' => "Le titre doit être compris entre 10 et 150 caractères."
             ],
             'content_empty' => [
                 'id' => 1,
                 'title' => "Titre d'article valide",
                 'content' => "",
-                'exception' => "Le contenu ne peut pas être vide"
+                'exception' => "Le contenu ne peut pas être vide."
             ],
             'content_too_short' => [
                 'id' => 1,
                 'title' => "Titre d'article valide",
                 'content' => "Contenu",
-                'exception' => "Le contenu doit être compris entre 10 et 150 caractères"
+                'exception' => "Le contenu doit être compris entre 10 et 150 caractères."
             ],
             'content_too_long' => [
                 'id' => 1,
                 'title' => "Titre d'article valide",
                 'content' => str_repeat("Contenu de l'article invalide supérieur a 150 caractères", 10),
-                'exception' => "Le contenu doit être compris entre 10 et 150 caractères"
+                'exception' => "Le contenu doit être compris entre 10 et 150 caractères."
             ],
         ];
     }
