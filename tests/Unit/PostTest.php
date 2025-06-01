@@ -18,9 +18,9 @@ class PostTest extends TestCase
             content: "Contenu d'article valide",
         );
 
-        self::assertSame(expected: 1, actual: $post->id);
-        self::assertSame(expected: "Titre d'article valide", actual: $post->title);
-        self::assertSame(expected: "Contenu d'article valide", actual: $post->content);
+        self::assertSame(1, $post->id);
+        self::assertSame("Titre d'article valide", $post->title);
+        self::assertSame("Contenu d'article valide", $post->content);
     }
 
     /**
@@ -69,7 +69,7 @@ class PostTest extends TestCase
                 'exception' => "Le contenu ne peut pas être vide."
             ],
             'content_too_short' => [
-                'id' => 1,
+
                 'title' => "Titre d'article valide",
                 'content' => "Contenu",
                 'exception' => "Le contenu doit être compris entre 10 et 150 caractères."
