@@ -69,7 +69,7 @@ class PostTest extends TestCase
                 'exception' => "Le contenu ne peut pas être vide."
             ],
             'content_too_short' => [
-
+                'id' => 1,
                 'title' => "Titre d'article valide",
                 'content' => "Contenu",
                 'exception' => "Le contenu doit être compris entre 10 et 150 caractères."
