@@ -21,4 +21,3 @@ cd ton-depot/runner-docker
 docker-compose up -d
 ```
 
-tes
