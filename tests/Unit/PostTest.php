@@ -33,6 +33,7 @@ class PostTest extends TestCase
      *  - exception : message d'exception attendu
      *
      * @return array<string, array{ id: int, title: string, content: string, exception: string }>
+     * @see Post
      */
     public static function postDataProvider(): array
     {
