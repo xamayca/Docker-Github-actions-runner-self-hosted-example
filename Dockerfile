@@ -1,4 +1,4 @@
-# Utilise une image Debian "bookworm" allégée comme base pour le conteneur
+# Utilise une image Debian "bookworm" allégée comme base pour le conteneur docker
 # https://hub.docker.com/_/debian
 FROM debian:bookworm-slim
 
