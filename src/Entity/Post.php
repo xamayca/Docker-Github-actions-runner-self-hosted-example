@@ -6,9 +6,7 @@ final class Post
 {
     public function __construct(
 
-        private(set) int $id = 0 {
-            get => $this->id;
-        },
+        private(set) readonly int $id = 0,
 
         private(set) string $title = '' {
             set {
