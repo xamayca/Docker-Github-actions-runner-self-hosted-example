@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: [self-hosted, x64, linux, ephemeral]
     steps:
-
+      -
       - name: Analyse statique du code avec PHPStan
         run: ./vendor/bin/phpstan analyse
 
