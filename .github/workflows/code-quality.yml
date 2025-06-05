@@ -17,6 +17,9 @@ jobs:
     runs-on: [self-hosted, x64, linux, ephemeral]
     steps:
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Analyse statique du code avec PHPStan
         run: ./vendor/bin/phpstan analyse
 
