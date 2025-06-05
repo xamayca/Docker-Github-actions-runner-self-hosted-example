@@ -15,22 +15,7 @@ permissions:
 jobs:
   build:
     runs-on: [self-hosted, x64, linux, ephemeral]
-    container:
-      image: composer:latest
-      volumes:
-        - ${{ github.workspace }}:/app
     steps:
-      - name: Récupération du code source
-        uses: actions/checkout@v4
-
-      - name: Téléchargement de Composer
-        run: composer validate --strict
-
-      - name: Contrôle de conformité du fichier Composer
-        run: composer validate --strict
-
-      - name: Installation des dépendances avec Composer
-        run: composer install --prefer-dist --no-progress --no-interaction
 
       - name: Analyse statique du code avec PHPStan
         run: ./vendor/bin/phpstan analyse
