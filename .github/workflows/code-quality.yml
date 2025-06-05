@@ -20,6 +20,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Composer install
+        run: composer install
+
       - name: Analyse statique du code avec PHPStan
         run: ./vendor/bin/phpstan analyse
 
