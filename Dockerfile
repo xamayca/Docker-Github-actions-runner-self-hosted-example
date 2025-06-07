@@ -1,6 +1,6 @@
 # Utilise une image Debian "bookworm" allégée comme base pour le conteneur docker
 # https://hub.docker.com/_/debian
-FROM debian:bookworm-slim
+FROM php:8.4-cli
 
 # Évite les invites interactives lors de l'installation des paquets
 # https://www.debian.org/releases/bookworm/s390x/ch05s02.fr.html
@@ -8,10 +8,10 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Version du GitHub Actions runner utilisée lors du build
 # https://github.com/actions/runner/releases/
-ARG RUNNER_VERSION="2.324.0"
+ARG RUNNER_VERSION="2.325.0"
 
 # SHA-256 checksum de l'archive GitHub Actions runner utilisée pour vérifier son intégrité lors du build
-ARG RUNNER_SHA256="e8e24a3477da17040b4d6fa6d34c6ecb9a2879e800aa532518ec21e49e21d7b4"
+ARG RUNNER_SHA256="5020da7139d85c776059f351e0de8fdec753affc9c558e892472d43ebeb518f4"
 
 # Mise à jour de la liste des paquets et nettoyage du cache apt
 RUN apt-get update && apt-get clean
