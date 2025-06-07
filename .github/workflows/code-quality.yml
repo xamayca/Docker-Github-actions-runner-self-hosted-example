@@ -17,11 +17,11 @@ jobs:
     runs-on: [self-hosted, x64, linux, ephemeral]
     steps:
 
-      - name: Checkout repository
+      - name: Récupération du code source
         uses: actions/checkout@v4
 
-      - name: Composer install
-        run: composer install
+      - name: Installation des dépendances avec Composer
+        run: composer install --prefer-dist
 
       - name: Analyse statique du code avec PHPStan
         run: ./vendor/bin/phpstan analyse

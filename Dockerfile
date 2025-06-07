@@ -1,5 +1,5 @@
-# Utilise une image Debian "bookworm" allégée comme base pour le conteneur docker
-# https://hub.docker.com/_/debian
+# Utilise l'image officielle PHP 8.4 en version CLI basée sur Debian
+# Référence: https://hub.docker.com/_/php
 FROM php:8.4-cli
 
 # Évite les invites interactives lors de l'installation des paquets
@@ -13,6 +13,9 @@ ARG RUNNER_VERSION="2.325.0"
 # SHA-256 checksum de l'archive GitHub Actions runner utilisée pour vérifier son intégrité lors du build
 ARG RUNNER_SHA256="5020da7139d85c776059f351e0de8fdec753affc9c558e892472d43ebeb518f4"
 
+# Copie la dernière version de Composer depuis l'image officielle vers le répertoire /usr/bin du container
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+
 # Mise à jour de la liste des paquets et nettoyage du cache apt
 RUN apt-get update && apt-get clean
 
@@ -21,11 +24,19 @@ RUN apt-get update && apt-get clean
 # - curl: https://packages.debian.org/fr/sid/curl
 # - sudo: https://packages.debian.org/fr/sid/sudo
 # - jq: https://packages.debian.org/fr/sid/jq
+# - libzip: https://packages.debian.org/fr/sid/libzip-dev
+# - unzip: https://packages.debian.org/fr/sid/unzip
+# Configuration de PHP dans Docker pour activer et installer des extensions PHP
+# Sources: https://www.php.net/manual/en/configure.about.php
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
     sudo \
     jq \
+    libzip-dev \
+    unzip \
+    && docker-php-ext-configure zip \
+    && docker-php-ext-install zip \
     && rm -rf /var/lib/apt/lists/*
 
 # Création d’un utilisateur 'github' avec répertoire personnel pour exécuter le GitHub Actions runner
