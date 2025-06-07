@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Définit les labels du runner GitHub Actions auto-hébergé
-export GITHUB_RUNNER_LABELS="x64,linux,ephemeral"
+export GITHUB_RUNNER_LABELS="x64,linux"
 export GITHUB_REPOSITORY_OWNER="xamayca"
 export GITHUB_REPOSITORY_NAME="Docker-Github-actions-runner-self-hosted-example"
 
@@ -52,8 +52,7 @@ echo "⚙️ Configuration du runner auto-hébergé GitHub Actions avec des para
   --name "${GITHUB_REPOSITORY_NAME}-actions-runner" \
   --labels "${GITHUB_RUNNER_LABELS}" \
   --work "${HOME}/${GITHUB_RUNNER_WORKDIR}" \
-  --replace \
-  --ephemeral
+  --replace
 
 echo "▶️  Démarrage du runner auto-hébergé GitHub Actions avec les paramètres spécifiés..."
 
@@ -68,6 +67,7 @@ trap cleanup INT TERM
 
 # Exécute le script 'run.sh' de GitHub Actions en arrière-plan en passant tous les arguments reçus
 ./run.sh &
+RUNNER_PID=$!
 
 # Attend la fin du processus en arrière-plan (run.sh) avant de continuer
-wait $!
+wait "$RUNNER_PID"
