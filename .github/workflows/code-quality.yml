@@ -14,7 +14,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: [self-hosted, x64, linux, ephemeral]
+    runs-on: [self-hosted, x64, linux]
     steps:
 
       - name: Récupération du code source
