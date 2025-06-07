@@ -1,3 +1,6 @@
+![Code-quality-workflow](https://github.com/xamayca/Docker-Github-actions-runner-self-hosted-example/actions/workflows/code-quality.yml/badge.svg)
+
+
 # Docker & Github actions runner self hosted example
 
 ---
@@ -20,3 +23,5 @@ cd ton-depot/runner-docker
 
 docker-compose up -d
 ```
+
+test workflow
