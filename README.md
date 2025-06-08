@@ -73,3 +73,13 @@ Cette commande télécharge les images nécessaires et construit le conteneur av
 ```bash
 docker compose up --build
 ```
+
+## Mise à jour du GitHub Actions Runner
+> **💡 Astuce :**
+> 
+> Le runner GitHub Actions est régulièrement mis à jour.
+> 
+> Si une nouvelle version est disponible, pense à mettre à jour les variables correspondantes dans ton fichier `.env`.
+>
+> Pour cela, consulte les dernières releases disponibles et récupère la dernière version du runner ainsi que le SHA-256 de l’archive sur ce lien :
+> https://github.com/actions/runner/releases/
