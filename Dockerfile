@@ -7,7 +7,6 @@ FROM php:8.4-cli
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Version du GitHub Actions runner utilisée lors du build
-# https://github.com/actions/runner/releases/
 ARG RUNNER_VERSION
 
 # SHA-256 checksum de l'archive GitHub Actions runner utilisée pour vérifier son intégrité lors du build
