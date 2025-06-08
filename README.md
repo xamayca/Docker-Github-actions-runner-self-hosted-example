@@ -69,5 +69,5 @@ GITHUB_REPOSITORY_NAME="<NOM_DU_DEPOT_GITHUB>"
 Cette commande télécharge les images nécessaires et construit le conteneur avant de le lancer :
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
