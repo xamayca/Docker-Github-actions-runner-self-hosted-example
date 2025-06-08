@@ -9,7 +9,7 @@
 ---
 
 <p align="center">
-    Ce projet met en place un runner GitHub Actions auto-hébergé dans un conteneur Docker, optimisé pour un environnement PHP.
+    Ce projet met en place un runner <a href="https://github.com/features/actions">GitHub Actions</a> auto-hébergé dans un conteneur Docker, optimisé pour un environnement PHP.
 </p>
 
 ---
