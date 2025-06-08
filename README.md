@@ -21,7 +21,7 @@ Voici les étapes clés du fonctionnement interne du conteneur :
 - Les dépendances nécessaires sont installées automatiquement lors de la construction de l’image.
 - Un utilisateur `non-root` avec `privilèges sudo` est créé pour assurer la sécurité et la bonne gestion des permissions.
 - Au démarrage du conteneur, un script `entrypoint` :
-    - Télécharge la dernière version du [Github Actions runner (Release)](https://github.com/actions/runner/releases) depuis GitHub.
+    - Télécharge la dernière version du **[Github Actions runner (Release)](https://github.com/actions/runner/releases)** depuis GitHub.
     - Extrait et installe le runner dans le conteneur.
     - Configure et authentifie le runner à l’aide du jeton personnel fourni.
     - Lance le runner, prêt à recevoir et exécuter les jobs GitHub Actions.
