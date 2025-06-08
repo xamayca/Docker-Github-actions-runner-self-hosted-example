@@ -30,7 +30,7 @@ De cette façon à chaque `push` ou `pull request`, ce runner auto-hébergé ex�
 
 Le workflow inclus dans ce projet réalise notamment :
 - L’action [GitHub checkout](https://github.com/actions/checkout) pour cloner les fichiers du projet dans l’environnement du runner.
-- L'installation des dépendances PHP du projet via Composer.
+- L'installation des dépendances PHP du projet via [Composer](https://getcomposer.org/doc/).
 - Une analyse statique du code avec **[PHPStan](https://phpstan.org/)**.
 - L’exécution des tests unitaires avec **[PHPUnit](https://phpunit.de/index.html)**.
 
