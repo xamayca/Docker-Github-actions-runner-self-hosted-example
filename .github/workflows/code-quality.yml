@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  analyse-statique-et-tests-unitaires:
     runs-on: [self-hosted, x64, linux]
     steps:
 
