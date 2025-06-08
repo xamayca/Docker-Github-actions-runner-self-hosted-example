@@ -29,6 +29,8 @@ Voici les étapes clés du fonctionnement interne du conteneur :
 De cette façon à chaque `push` ou `pull request`, ce runner auto-hébergé exécute vos workflows CI/CD localement ou sur un serveur privé, offrant un contrôle total et une meilleure confidentialité pour votre code.
 
 Le workflow inclus dans ce projet réalise notamment :
+- L’action [GitHub checkout](https://github.com/actions/checkout) pour cloner les fichiers du projet dans l’environnement du runner.
+- L'installation des dépendances PHP du projet via Composer.
 - Une analyse statique du code avec **[PHPStan](https://phpstan.org/)**.
 - L’exécution des tests unitaires avec **[PHPUnit](https://phpunit.de/index.html)**.
 
