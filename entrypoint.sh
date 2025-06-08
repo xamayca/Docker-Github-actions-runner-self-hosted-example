@@ -45,6 +45,7 @@ echo "⚙️ Configuration du runner auto-hébergé GitHub Actions avec des para
 # Pour voir les options disponibles, exécutez : ./config.sh --help
 ./config.sh \
   --unattended \
+  --disableupdate \
   --url https://github.com/"${GITHUB_REPOSITORY_OWNER}"/"${GITHUB_REPOSITORY_NAME}" \
   --token "${GITHUB_RUNNER_TOKEN}" \
   --name "${GITHUB_REPOSITORY_NAME}-actions-runner" \
