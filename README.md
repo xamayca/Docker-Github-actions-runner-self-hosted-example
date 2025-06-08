@@ -80,6 +80,10 @@ docker compose up --build
 > Le runner GitHub Actions est régulièrement mis à jour.
 > 
 > Si une nouvelle version est disponible, pense à mettre à jour les variables correspondantes dans ton fichier `.env`.
+> ```env 
+> RUNNER_VERSION="VERSION_DE_LA_RELEASE"
+> RUNNER_SHA256="SHA-256-DE-L_ARCHIVE"
+> ```
 >
 > Pour cela, consulte les dernières releases disponibles et récupère la dernière version du runner ainsi que le SHA-256 de l’archive sur ce lien :
 > https://github.com/actions/runner/releases/
