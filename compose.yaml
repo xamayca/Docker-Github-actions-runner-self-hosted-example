@@ -19,6 +19,11 @@ services:
       # Nom du fichier Dockerfile à utiliser
       dockerfile: Dockerfile
 
+      # Arguments passés au build Docker, récupérés dans le Dockerfile via ARG
+      args:
+        RUNNER_VERSION: ${RUNNER_VERSION}
+        RUNNER_SHA256: ${RUNNER_SHA256}
+
     # Connexion du conteneur à un réseau Docker nommé
     networks:
       - local-network
