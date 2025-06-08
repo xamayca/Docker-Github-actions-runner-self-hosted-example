@@ -11,17 +11,25 @@ Ce projet montre comment configurer un runner GitHub Actions auto-hébergé à l
 
 ## Prérequis
 
-- Docker Desktop installer sur votre ordinateur
+- Docker Desktop doit être installé sur votre machine.
 
 ---
 
-## Installation du Runner Docker
+## Installation du GitHub Actions Runner dans Docker
 
+#### 1 - Clonage du dépot
 ```bash
 git clone https://github.com/xamayca/Docker-Github-actions-runner-self-hosted-example.git
-cd ton-depot/runner-docker
+```
 
-docker-compose up -d
+#### 2 - Accéder au répertoire du projet
+```bash
+cd Docker-Github-actions-runner-self-hosted-example
+```
+
+#### 3 - Construction de l'image docker Github Actions runner
+```bash
+docker-compose up --build
 ```
 
 test workflow
