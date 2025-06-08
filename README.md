@@ -35,14 +35,14 @@ Le workflow inclus dans ce projet réalise notamment :
 
 ---
 
-## Prérequis
+## 📋 Prérequis
 
 - **[Docker Desktop](https://www.docker.com/products/docker-desktop) installé sur votre machine.**
 - **[Jeton d'accès personnel GitHub (PAT)](https://docs.github.com/fr/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens) avec les autorisations appropriées (ex. : `repo`, `workflow`) pour permettre au runner de s'enregistrer et exécuter les jobs sur le dépôt.**
 
 ---
 
-## Installation du GitHub Actions Runner dans Docker
+## ⚙️ Installation du GitHub Actions Runner dans Docker
 
 #### <ins> 1. Clonage du dépot </ins>
 ```bash
