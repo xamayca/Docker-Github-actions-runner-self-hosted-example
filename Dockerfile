@@ -6,13 +6,6 @@ FROM php:8.4-cli
 # https://www.debian.org/releases/bookworm/s390x/ch05s02.fr.html
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Version du GitHub Actions runner utilisée lors du build
-# https://github.com/actions/runner/releases/
-ARG RUNNER_VERSION="2.325.0"
-
-# SHA-256 checksum de l'archive GitHub Actions runner utilisée pour vérifier son intégrité lors du build
-ARG RUNNER_SHA256="5020da7139d85c776059f351e0de8fdec753affc9c558e892472d43ebeb518f4"
-
 # Copie la dernière version de Composer depuis l'image officielle vers le répertoire /usr/bin du container
 COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
