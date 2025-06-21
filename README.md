@@ -61,7 +61,7 @@ cd Docker-Github-actions-runner-self-hosted-example
 Crée un fichier `.env` à la racine du projet avec les variables suivantes, en remplaçant les valeurs par celles de votre projet :
 
 ```env
-GITHUB_PERSONAL_TOKEN=<JETON_PERSONNEL_GITHUB>"
+GITHUB_PERSONAL_TOKEN="<JETON_PERSONNEL_GITHUB>"
 GITHUB_REPOSITORY_OWNER="<NOM_D_UTILISATEUR_GITHUB>"
 GITHUB_REPOSITORY_NAME="<NOM_DU_DEPOT_GITHUB>"
 ```
