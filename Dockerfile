@@ -25,6 +25,7 @@ RUN apt-get update && apt-get clean
 # - jq: https://packages.debian.org/fr/sid/jq
 # - libzip: https://packages.debian.org/fr/sid/libzip-dev
 # - unzip: https://packages.debian.org/fr/sid/unzip
+# - dos2unix: https://packages.debian.org/fr/sid/dos2unix
 # Configuration de PHP dans Docker pour activer et installer des extensions PHP
 # Sources: https://www.php.net/manual/en/configure.about.php
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -34,6 +35,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     jq \
     libzip-dev \
     unzip \
+    dos2unix \
     && docker-php-ext-configure zip \
     && docker-php-ext-install zip \
     && rm -rf /var/lib/apt/lists/*
@@ -71,6 +73,9 @@ RUN sudo ./bin/installdependencies.sh
 
 # Copie le script d'entrée dans le répertoire actions-runner et attribue la propriété à l'utilisateur et au groupe 'github'
 COPY --chown=github:github entrypoint.sh /actions-runner/entrypoint.sh
+
+# Convertit les fins de ligne Windows (CRLF) en fins de ligne Unix (LF) pour éviter les erreurs d'exécution dans les environnements Linux
+RUN dos2unix /actions-runner/entrypoint.sh
 
 # Rend le script d'entrée exécutable
 RUN chmod u+x /actions-runner/entrypoint.sh
